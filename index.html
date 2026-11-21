@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aiofoct - Free WebP, PNG & JPG Image Converter Online</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@700&display=swap"
+    rel="stylesheet">
+
+  <!-- FontAwesome for crisp UI icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Bootstrap 5.3.2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Internal Assets: -->
+  <link rel="stylesheet" href="assets/css/main.min.css" />
+</head>
+
+<body>
+
+  <!-- Outer Frame with Small Border Radius enclosing Nav + Hero -->
+  <div class="viewport-frame">
+    <!-- Ambient Backdrop Glow -->
+    <div class="ambient-glow"></div>
+
+    <!-- ========================================================
+         NAVIGATION (Flush top of frame with bottom border)
+         ======================================================== -->
+    <nav class="nav-container" aria-label="Main Navigation">
+      <!-- Logo -->
+      <a href="/" class="brand-logo" aria-label="Aiofoct Home">
+        <img src="assets/images/logo/aiofoct-logo.svg" alt="Aiofoct" class="brand-logo-img" />
+      </a>
+
+      <!-- Desktop Nav Items -->
+      <ul class="nav-menu">
+        <!-- Tools Item with 4-Color Pulse (No Down Arrows) -->
+        <li class="nav-item nav-item-tools" id="toolsNavItem">
+          <a href="#tools" class="nav-link tools-nav-link" id="toolsLink">Tools</a>
+
+          <!-- Stylish Megamenu Dropdown -->
+          <div class="megamenu" id="toolsMegaMenu">
+            <div class="megamenu-grid">
+              <!-- Column 1: Popular Image Converters -->
+              <div class="megamenu-col">
+                <h4><i class="fa-solid fa-arrows-rotate"></i> Converters</h4>
+                <ul class="megamenu-list">
+                  <li class="megamenu-item">
+                    <a href="#png-to-jpg">
+                      <div class="megamenu-icon"><i class="fa-solid fa-image"></i></div>
+                      <div class="megamenu-info">
+                        <strong>PNG to JPG</strong>
+                        <p>Lossless RGB conversion</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="megamenu-item">
+                    <a href="#jpg-to-webp">
+                      <div class="megamenu-icon"><i class="fa-solid fa-file-image"></i></div>
+                      <div class="megamenu-info">
+                        <strong>JPG to WebP</strong>
+                        <p>Modern Google-optimized</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="megamenu-item">
+                    <a href="#webp-to-png">
+                      <div class="megamenu-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                      <div class="megamenu-info">
+                        <strong>WebP to PNG</strong>
+                        <p>Retain crisp transparency</p>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Column 2: Optimization Tools -->
+              <div class="megamenu-col">
+                <h4><i class="fa-solid fa-bolt"></i> Optimization</h4>
+                <ul class="megamenu-list">
+                  <li class="megamenu-item">
+                    <a href="#compress-images">
+                      <div class="megamenu-icon"><i class="fa-solid fa-compress"></i></div>
+                      <div class="megamenu-info">
+                        <strong>Compressor</strong>
+                        <p>Shrink file size up to 80%</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="megamenu-item">
+                    <a href="#bulk-resize">
+                      <div class="megamenu-icon"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></div>
+                      <div class="megamenu-info">
+                        <strong>Bulk Resizer</strong>
+                        <p>Exact pixel & ratio scale</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="megamenu-item">
+                    <a href="#svg-optimizer">
+                      <div class="megamenu-icon"><i class="fa-solid fa-bezier-curve"></i></div>
+                      <div class="megamenu-info">
+                        <strong>SVG Minifier</strong>
+                        <p>Clean metadata & paths</p>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Column 3: Web Utilities -->
+              <div class="megamenu-col">
+                <h4><i class="fa-solid fa-shield-halved"></i> Utilities</h4>
+                <ul class="megamenu-list">
+                  <li class="megamenu-item">
+                    <a href="#metadata-remover">
+                      <div class="megamenu-icon"><i class="fa-solid fa-eye-slash"></i></div>
+                      <div class="megamenu-info">
+                        <strong>EXIF Stripper</strong>
+                        <p>Remove GPS & camera data</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="megamenu-item">
+                    <a href="#color-picker">
+                      <div class="megamenu-icon"><i class="fa-solid fa-palette"></i></div>
+                      <div class="megamenu-info">
+                        <strong>Color Extractor</strong>
+                        <p>Generate HEX & RGB palette</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="megamenu-item">
+                    <a href="#fav-generator">
+                      <div class="megamenu-icon"><i class="fa-solid fa-icons"></i></div>
+                      <div class="megamenu-info">
+                        <strong>Favicon Maker</strong>
+                        <p>48x48 to 512x512 PWA icons</p>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="megamenu-footer-bar">
+              <span>⚡ 100% Client-Side. No files are ever sent to a server.</span>
+              <a href="#all-tools">Explore all 28+ tools <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a href="#blog" class="nav-link">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a href="#about" class="nav-link">About</a>
+        </li>
+        <li class="nav-item">
+          <a href="#contact" class="nav-link">Contact</a>
+        </li>
+      </ul>
+
+      <!-- Right Action Items -->
+      <div class="nav-actions">
+        <!-- Search Trigger Button -->
+        <button type="button" class="nav-search-trigger" id="openSearchBtn" aria-label="Open Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search...</span>
+          <kbd>⌘K</kbd>
+        </button>
+
+        <!-- Primary CTA -->
+        <a href="#all-tools" class="btn-browse-pill">Browse tools</a>
+
+        <!-- Hamburger Icon for Mobile -->
+        <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Open Mobile Menu">
+          <span class="nav-line bar-1"></span>
+          <span class="nav-line bar-2"></span>
+          <span class="nav-line bar-3"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ========================================================
+         HERO SECTION
+         ======================================================== -->
+    <main class="hero-section">
+      <!-- Trust Indicator with 3 animated colored circles -->
+      <div class="trust-pill">
+        <div class="bubble-cluster">
+          <div class="cluster-dot"></div>
+          <div class="cluster-dot"></div>
+          <div class="cluster-dot"></div>
+        </div>
+        <span>Trusted by 12,000+ people converting files daily</span>
+      </div>
+
+      <!-- Main Headline with lock-fixed animated "need" pill -->
+      <h1 class="hero-title">
+        One tab Every file tool you'll ever <span class="highlight-pill"><span class="strut-keeper">need</span><span
+            class="typing-text" id="typingNeed">need</span><span class="typing-cursor"></span></span>.
+      </h1>
+
+      <!-- Subtitle description -->
+      <p class="hero-sub">
+        Convert, compress and clean up your images in seconds free, private, and fast enough that you won't reach for
+        anything else.
+      </p>
+
+      <!-- 100% Free Pill Badge -->
+      <div class="free-badge">
+        100% free · No sign-up · No watermarks
+      </div>
+
+      <!-- Hero Action Buttons -->
+      <div class="cta-row">
+        <a href="#browse" class="btn-hero-dark">Browse all tools →</a>
+        <a href="#blog" class="btn-hero-light">Read the blog</a>
+      </div>
+
+      <!-- Dark Converter Preview App Window -->
+      <div class="app-card-wrapper">
+        <div class="app-card">
+          <!-- Window Controls -->
+          <div class="window-dots">
+            <div class="window-dot"></div>
+            <div class="window-dot"></div>
+            <div class="window-dot"></div>
+          </div>
+
+          <!-- Dashed Inner Drop Area -->
+          <div class="dashed-zone" id="dropzoneBox">
+            <div class="file-preview">
+              <div class="file-type-chip" id="chipExt">JPG</div>
+              <div class="file-meta">
+                <strong id="chipName">product-photo.jpg</strong>
+                <span id="chipMeta">2.4 MB · converting to PNG</span>
+              </div>
+            </div>
+
+            <!-- Action button with live interactive state -->
+            <button type="button" class="btn-convert-action" id="demoConvertBtn">
+              <span id="btnConvertText">Convert</span>
+              <i class="fa-solid fa-bolt" id="btnConvertIcon"></i>
+            </button>
+          </div>
+
+          <!-- Quick Navigation Tags -->
+          <div class="quick-tags">
+            <a href="#png-to-jpg">PNG to JPG</a>
+            <a href="#jpg-to-webp">JPG to WebP</a>
+            <a href="#webp-to-png">WebP to PNG</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Trust Metrics -->
+      <div class="hero-footer-trust">
+        <div class="trust-stat-item">
+          <span class="star">★</span> Google 3.9/5
+        </div>
+        <div class="trust-stat-item">
+          <span class="star">★</span> Trustpilot 3.8/5
+        </div>
+        <div class="trust-stat-item">
+          <span class="star">★</span> In-Browser Processing: 100% Private
+        </div>
+      </div>
+
+      <section class="section-1 tools-grid-section" id="tools">
+        <div class="container-fluid">
+          <!-- Section Header -->
+          <div class="text-center">
+            <p class="tools-eyebrow">TOOLS</p>
+            <h2 class="tools-heading">Pick a tool, drop a file, done</h2>
+            <p class="tools-subtitle">Six converters, one simple flow. No installs, no accounts, no catch.</p>
+          </div>
+
+          <!-- Responsive 3-Column Grid -->
+          <div class="row g-2 g-md-3">
+            <!-- Card 1 -->
+            <div class="col-12 col-sm-6 col-lg-4">
+              <a href="#jpg-to-png" class="tool-box-card">
+                <h3 class="tool-box-title">JPG to PNG</h3>
+                <p class="tool-box-desc">Add transparency support without losing quality.</p>
+                <span class="tool-box-cta">Try it free &rarr;</span>
+              </a>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-12 col-sm-6 col-lg-4">
+              <a href="#png-to-jpg" class="tool-box-card">
+                <h3 class="tool-box-title">PNG to JPG</h3>
+                <p class="tool-box-desc">Shrink file size for web and email.</p>
+                <span class="tool-box-cta">Try it free &rarr;</span>
+              </a>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-12 col-sm-6 col-lg-4">
+              <a href="#jpg-to-webp" class="tool-box-card">
+                <h3 class="tool-box-title">JPG to WebP</h3>
+                <p class="tool-box-desc">Cut load times with the modern web format.</p>
+                <span class="tool-box-cta">Try it free &rarr;</span>
+              </a>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col-12 col-sm-6 col-lg-4">
+              <a href="#webp-to-jpg" class="tool-box-card">
+                <h3 class="tool-box-title">WebP to JPG</h3>
+                <p class="tool-box-desc">Get standard compatibility back in one click.</p>
+                <span class="tool-box-cta">Try it free &rarr;</span>
+              </a>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="col-12 col-sm-6 col-lg-4">
+              <a href="#png-to-webp" class="tool-box-card">
+                <h3 class="tool-box-title">PNG to WebP</h3>
+                <p class="tool-box-desc">Keep transparency, lose the file weight.</p>
+                <span class="tool-box-cta">Try it free &rarr;</span>
+              </a>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="col-12 col-sm-6 col-lg-4">
+              <a href="#webp-to-png" class="tool-box-card">
+                <h3 class="tool-box-title">WebP to PNG</h3>
+                <p class="tool-box-desc">Bring WebP images into editors that need PNG.</p>
+                <span class="tool-box-cta">Try it free &rarr;</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-2 how-it-works-section" id="how-it-works" aria-labelledby="hiw-heading">
+        <div class="container">
+          <!-- Section Header -->
+          <div class="text-center">
+            <p class="hiw-eyebrow">HOW IT WORKS</p>
+            <h2 class="hiw-heading" id="hiw-heading">Three steps. No learning curve.</h2>
+          </div>
+
+          <!-- 3-Step Grid -->
+          <ol class="row g-3 g-md-4 list-unstyled m-0">
+            <!-- Step 1 -->
+            <li class="col-12 col-md-4">
+              <article class="hiw-step-card">
+                <div class="hiw-step-badge" aria-hidden="true">1</div>
+                <h3 class="hiw-step-title">Choose your file</h3>
+                <p class="hiw-step-desc">Drag it in or click to browse. One file or a batch, your call.</p>
+              </article>
+            </li>
+
+            <!-- Step 2 (Featured Center Card) -->
+            <li class="col-12 col-md-4">
+              <article class="hiw-step-card hiw-step-featured">
+                <div class="hiw-step-badge" aria-hidden="true">2</div>
+                <h3 class="hiw-step-title">Convert instantly</h3>
+                <p class="hiw-step-desc">The tool does the work in seconds, right in your browser tab.</p>
+              </article>
+            </li>
+
+            <!-- Step 3 -->
+            <li class="col-12 col-md-4">
+              <article class="hiw-step-card">
+                <div class="hiw-step-badge" aria-hidden="true">3</div>
+                <h3 class="hiw-step-title">Download and go</h3>
+                <p class="hiw-step-desc">Download ready. 100% private: no uploads, no servers, no tracking.</p>
+              </article>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section-3 why-aiofoct-section" id="why-aiofoct" aria-labelledby="why-heading">
+        <div class="container">
+          <div class="text-center">
+            <p class="sec-eyebrow">WHY AIOFOCT</p>
+            <h2 class="sec-heading" id="why-heading">Built for people who just want their file converted</h2>
+          </div>
+
+          <div class="row g-2 g-md-3">
+            <div class="col-12 col-md-6">
+              <article class="why-card">
+                <h3 class="why-card-title">Private by design</h3>
+                <p class="why-card-desc">Processed in your browser, never stored anywhere.</p>
+              </article>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <article class="why-card">
+                <h3 class="why-card-title">No installs, no accounts</h3>
+                <p class="why-card-desc">Open a tab, use the tool, close the tab.</p>
+              </article>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <article class="why-card">
+                <h3 class="why-card-title">Quality that holds up</h3>
+                <p class="why-card-desc">Lossless where it matters, smart compression where it doesn't.</p>
+              </article>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <article class="why-card">
+                <h3 class="why-card-title">Works everywhere</h3>
+                <p class="why-card-desc">Mac, Windows, phone, tablet, any browser.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-4 blog-preview-section" id="blog" aria-labelledby="blog-heading">
+        <div class="container">
+          <div class="text-center">
+            <p class="sec-eyebrow">FROM THE BLOG</p>
+            <h2 class="sec-heading" id="blog-heading">Guides for the parts Google doesn't explain well</h2>
+            <p class="sec-subtitle">Tutorials on file formats, web development and SEO.</p>
+          </div>
+
+          <div class="row g-2 g-md-3">
+            <div class="col-12 col-md-4">
+              <a href="#jpg-vs-png-vs-webp" class="blog-card">
+                <span class="blog-card-tag">FILE FORMATS</span>
+                <h3 class="blog-card-title">JPG vs PNG vs WebP: which one should you actually use?</h3>
+                <span class="blog-card-cta">Read more <span class="arrow">&rarr;</span></span>
+              </a>
+            </div>
+
+            <div class="col-12 col-md-4">
+              <a href="#lossless-vs-lossy" class="blog-card">
+                <span class="blog-card-tag">GUIDES</span>
+                <h3 class="blog-card-title">A beginner's guide to lossless vs lossy compression</h3>
+                <span class="blog-card-cta">Read more <span class="arrow">&rarr;</span></span>
+              </a>
+            </div>
+
+            <div class="col-12 col-md-4">
+              <a href="#seo-ai-blog-structure" class="blog-card">
+                <span class="blog-card-tag">SEO</span>
+                <h3 class="blog-card-title">How to structure a blog post Google and AI search can read</h3>
+                <span class="blog-card-cta">Read more <span class="arrow">&rarr;</span></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-5 reviews-marquee-section" id="reviews" aria-labelledby="reviews-heading">
+        <div class="container">
+          <!-- Section Header -->
+          <div class="reviews-header text-center">
+            <p class="reviews-eyebrow">REVIEWS</p>
+            <h2 class="reviews-heading" id="reviews-heading">What people are saying</h2>
+
+            <div class="reviews-badges">
+              <div class="review-rating-pill">
+                <span class="platform-name">Google</span>
+                <span class="rating-stars" aria-label="4 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                <span class="rating-score">3.9/5</span>
+              </div>
+
+              <div class="review-rating-pill">
+                <span class="platform-name">Trustpilot</span>
+                <span class="rating-stars" aria-label="4 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                <span class="rating-score">3.8/5</span>
+              </div>
+            </div>
+
+            <div class="reviews-live-note">
+              <span class="livedot" aria-hidden="true"></span>
+              <span>Every review here is real &mdash; new ones added as they come in</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Full-Bleed Masked Marquee Tracks -->
+        <div class="reviews-marquee-viewport">
+          <!-- Row 1: Scrolls Left -->
+          <div class="reviews-track row1">
+            <article class="rcard">
+              <div class="rcard-head">
+                <span class="rcard-avatar avatar-lime">RK</span>
+                <div>
+                  <p class="rcard-name">R. Kapoor</p>
+                  <p class="rcard-role">Freelance designer</p>
+                </div>
+              </div>
+              <p class="rcard-text">Converted a batch of product photos in under a minute. No sign-up, no nonsense.</p>
+              <span class="rcard-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </article>
+
+            <article class="rcard">
+              <div class="rcard-head">
+                <span class="rcard-avatar avatar-indigo">SM</span>
+                <div>
+                  <p class="rcard-name">S. Martins</p>
+                  <p class="rcard-role">Front-end dev</p>
+                </div>
+              </div>
+              <p class="rcard-text">Finally a converter that doesn't wreck image quality or plaster a watermark on it.
+              </p>
+              <span class="rcard-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </article>
+
+            <article class="rcard">
+              <div class="rcard-head">
+                <span class="rcard-avatar avatar-olive">JT</span>
+                <div>
+                  <p class="rcard-name">J. Tan</p>
+                  <p class="rcard-role">Blogger</p>
+                </div>
+              </div>
+              <p class="rcard-text">The blog posts alone saved me an afternoon of guessing which format to use.</p>
+              <span class="rcard-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </article>
+
+            <article class="rcard">
+              <div class="rcard-head">
+                <span class="rcard-avatar avatar-soft-lime">AO</span>
+                <div>
+                  <p class="rcard-name">A. Oduya</p>
+                  <p class="rcard-role">Small business owner</p>
+                </div>
+              </div>
+              <p class="rcard-text">Batch-converted 40 product shots for our store listing in one go. Painless.</p>
+              <span class="rcard-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </article>
+
+            <!-- Seamless Loop Duplicate Set -->
+            <article class="rcard" aria-hidden="true">
+              <div class="rcard-head">
+                <span class="rcard-avatar avatar-lime">RK</span>
+                <div>
+                  <p class="rcard-name">R. Kapoor</p>
+                  <p class="rcard-role">Freelance designer</p>
+                </div>
+              </div>
+              <p class="rcard-text">Converted a batch of product photos in under a minute. No sign-up, no nonsense.</p>
+              <span class="rcard-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </article>
+
+            <article class="rcard" aria-hidden="true">
+              <div class="rcard-head">
+                <span class="rcard-avatar avatar-indigo">SM</span>
+                <div>
+                  <p class="rcard-name">S. Martins</p>
+                  <p class="rcard-role">Front-end dev</p>
+                </div>
+              </div>
+              <p class="rcard-text">Finally a converter that doesn't wreck image quality or plaster a watermark on it.
+              </p>
+              <span class="rcard-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </article>
+
+            <article class="rcard" aria-hidden="true">
+              <div class="rcard-head">
+                <span class="rcard-avatar avatar-olive">JT</span>
+                <div>
+                  <p class="rcard-name">J. Tan</p>
+                  <p class="rcard-role">Blogger</p>
+                </div>
+              </div>
+              <p class="rcard-text">The blog posts alone saved me an afternoon of guessing which format to use.</p>
+              <span class="rcard-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </article>
+
+            <article class="rcard" aria-hidden="true">
+              <div class="rcard-head">
+                <span class="rcard-avatar avatar-soft-lime">AO</span>
+                <div>
+                  <p class="rcard-name">A. Oduya</p>
+                  <p class="rcard-role">Small business owner</p>
+                </div>
+              </div>
+              <p class="rcard-text">Batch-converted 40 product shots for our store listing in one go. Painless.</p>
+              <span class="rcard-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </article>
+          </div>
+
+          <!-- Row 2: Scrolls Right -->
+          <div class="reviews-track row2">
+            <article class="rcard">
+              <div class="rcard-head">
+                <span class="rcard-avatar avatar-mid-lime">MP</span>
+                <div>
+                  <p class="rcard-name">M. Petrova</p>
+                  <p class="rcard-role">Photographer</p>
+                </div>
+              </div>
+              <p class="rcard-text">Kept full transparency after converting, which most tools quietly break.</p>
+              <span class="rcard-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </article>
+
+            <article class="rcard">
+              <div class="rcard-head">
+                <span class="rcard-avatar avatar-lime">DH</span>
+                <div>
+                  <p class="rcard-name">D. Huang</p>
+                  <p class="rcard-role">Marketing lead</p>
+                </div>
+              </div>
+              <p class="rcard-text">Fast enough that I use it mid-meeting without anyone noticing I left the call.</p>
+              <span class="rcard-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </article>
+
+            <article class="rcard">
+              <div class="rcard-head">
+                <span class="rcard-avatar avatar-indigo">LN</span>
+                <div>
+                  <p class="rcard-name">L. Novak</p>
+                  <p class="rcard-role">Indie hacker</p>
+                </div>
+              </div>
+              <p class="rcard-text">The 30-minute auto-delete policy is the reason I trust it with client files.</p>
+              <span class="rcard-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </article>
+
+            <article class="rcard">
+              <div class="rcard-head">
+                <span class="rcard-avatar avatar-olive">FB</span>
+                <div>
+                  <p class="rcard-name">F. Bakr</p>
+                  <p class="rcard-role">Student</p>
+                </div>
+              </div>
+              <p class="rcard-text">Genuinely didn't expect a free tool to look and feel this polished.</p>
+              <span class="rcard-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </article>
+
+            <!-- Seamless Loop Duplicate Set (Balanced 4-card set for exact -50% loop math) -->
+            <article class="rcard" aria-hidden="true">
+              <div class="rcard-head">
+                <span class="rcard-avatar avatar-mid-lime">MP</span>
+                <div>
+                  <p class="rcard-name">M. Petrova</p>
+                  <p class="rcard-role">Photographer</p>
+                </div>
+              </div>
+              <p class="rcard-text">Kept full transparency after converting, which most tools quietly break.</p>
+              <span class="rcard-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </article>
+
+            <article class="rcard" aria-hidden="true">
+              <div class="rcard-head">
+                <span class="rcard-avatar avatar-lime">DH</span>
+                <div>
+                  <p class="rcard-name">D. Huang</p>
+                  <p class="rcard-role">Marketing lead</p>
+                </div>
+              </div>
+              <p class="rcard-text">Fast enough that I use it mid-meeting without anyone noticing I left the call.</p>
+              <span class="rcard-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </article>
+
+            <article class="rcard" aria-hidden="true">
+              <div class="rcard-head">
+                <span class="rcard-avatar avatar-indigo">LN</span>
+                <div>
+                  <p class="rcard-name">L. Novak</p>
+                  <p class="rcard-role">Indie hacker</p>
+                </div>
+              </div>
+              <p class="rcard-text">The 30-minute auto-delete policy is the reason I trust it with client files.</p>
+              <span class="rcard-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </article>
+
+            <article class="rcard" aria-hidden="true">
+              <div class="rcard-head">
+                <span class="rcard-avatar avatar-olive">FB</span>
+                <div>
+                  <p class="rcard-name">F. Bakr</p>
+                  <p class="rcard-role">Student</p>
+                </div>
+              </div>
+              <p class="rcard-text">Genuinely didn't expect a free tool to look and feel this polished.</p>
+              <span class="rcard-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== FAQ section markup ===== -->
+      <section class="section-6 faq-section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8">
+
+              <div class="faq-heading-wrap">
+                <p class="faq-eyebrow">FAQ</p>
+                <h2 class="faq-h2">Frequently Asked Questions</h2>
+                <p class="faq-subtext">Questions people actually ask</p>
+              </div>
+
+              <div class="faq-list" id="faqList">
+
+                <div class="faq-item is-open">
+                  <button type="button" class="faq-question" aria-expanded="true">
+                    <span class="faq-question-text">Is this actually free?</span>
+                    <span class="faq-toggle" aria-hidden="true">
+                      <svg viewBox="0 0 12 12" fill="none">
+                        <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                      <p>Yes. Every tool on this site is free, with no hidden limits on how many files you convert.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <button type="button" class="faq-question" aria-expanded="false">
+                    <span class="faq-question-text">Do you store my files?</span>
+                    <span class="faq-toggle" aria-hidden="true">
+                      <svg viewBox="0 0 12 12" fill="none">
+                        <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                      <p>No. Files are processed and automatically removed from our servers within 30 minutes.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <button type="button" class="faq-question" aria-expanded="false">
+                    <span class="faq-question-text">Do I need to install anything?</span>
+                    <span class="faq-toggle" aria-hidden="true">
+                      <svg viewBox="0 0 12 12" fill="none">
+                        <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                      <p>No installs or browser extensions. Everything runs directly in your browser tab.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <button type="button" class="faq-question" aria-expanded="false">
+                    <span class="faq-question-text">Will converting reduce my image quality?</span>
+                    <span class="faq-toggle" aria-hidden="true">
+                      <svg viewBox="0 0 12 12" fill="none">
+                        <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                      <p>Depends on the tool. Lossless conversions like PNG keep full quality; lossy ones like JPG let
+                        you control the compression level.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <button type="button" class="faq-question" aria-expanded="false">
+                    <span class="faq-question-text">Can I convert more than one file at a time?</span>
+                    <span class="faq-toggle" aria-hidden="true">
+                      <svg viewBox="0 0 12 12" fill="none">
+                        <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                      <p>Yes, most tools support batch uploads, so you can drop in multiple files and convert them
+                        together.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <button type="button" class="faq-question" aria-expanded="false">
+                    <span class="faq-question-text">What's the difference between JPG, PNG and WebP?</span>
+                    <span class="faq-toggle" aria-hidden="true">
+                      <svg viewBox="0 0 12 12" fill="none">
+                        <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                      <p>JPG compresses with some quality loss for smaller files, PNG keeps full quality and supports
+                        transparency, and WebP aims to give you both at once.</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="site-footer" id="siteFooter">
+        <div class="footer-glow-line" aria-hidden="true"></div>
+
+        <div class="container">
+          <!-- Top 4-Column Navigation Grid -->
+          <div class="footer-main">
+            <div class="row g-4">
+
+              <!-- Column 1: Value Proposition + Privacy Status + Share (No Duplicate Logo) -->
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="footer-left-col">
+                  <div class="footer-status-badge">
+                    <span class="status-pulse-dot" aria-hidden="true"></span>
+                    <span>100% Client-Side · Zero Uploads</span>
+                  </div>
+
+                  <h3 class="footer-mission-title">Fast, private file utilities.</h3>
+                  <p class="footer-brand-text">
+                    A free toolbox for everyday file conversions, built to be fast, private and useful, one tool at a
+                    time.
+                  </p>
+
+                  <p class="footer-share-label">Like it? Share it.</p>
+                  <div class="footer-share-row">
+                    <a href="#" class="footer-icon-btn" aria-label="Share on Facebook">
+                      <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="footer-icon-btn" aria-label="Share on X">
+                      <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="#" class="footer-icon-btn" aria-label="Share on WhatsApp">
+                      <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <button type="button" class="footer-icon-btn" id="copySiteLinkBtn" aria-label="Copy link">
+                      <i class="fa-solid fa-link"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Column 2: Tools -->
+              <div class="col-6 col-md-6 col-lg-3">
+                <div class="footer-nav-col">
+                  <h3 class="footer-col-title">Tools</h3>
+                  <span class="footer-col-underline" aria-hidden="true"></span>
+                  <ul class="footer-link-list">
+                    <li><a href="#jpg-to-png">JPG to PNG</a></li>
+                    <li><a href="#png-to-jpg">PNG to JPG</a></li>
+                    <li><a href="#jpg-to-webp">JPG to WebP</a></li>
+                    <li><a href="#webp-to-jpg">WebP to JPG</a></li>
+                    <li><a href="#png-to-webp">PNG to WebP</a></li>
+                    <li><a href="#webp-to-png">WebP to PNG</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Column 3: Useful Links -->
+              <div class="col-6 col-md-6 col-lg-2">
+                <div class="footer-nav-col">
+                  <h3 class="footer-col-title">Useful Links</h3>
+                  <span class="footer-col-underline" aria-hidden="true"></span>
+                  <ul class="footer-link-list">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#privacy">Privacy &amp; Policy</a></li>
+                    <li><a href="#terms">Terms &amp; Conditions</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Column 4: Follow Us -->
+              <div class="col-12 col-md-6 col-lg-3">
+                <div class="footer-nav-col">
+                  <h3 class="footer-col-title">Follow us on</h3>
+                  <span class="footer-col-underline" aria-hidden="true"></span>
+                  <div class="footer-social-grid">
+                    <a href="#" class="footer-icon-btn" aria-label="Facebook">
+                      <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="footer-icon-btn" aria-label="X / Twitter">
+                      <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="#" class="footer-icon-btn" aria-label="Instagram">
+                      <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="footer-icon-btn" aria-label="Threads">
+                      <i class="fa-brands fa-threads"></i>
+                    </a>
+                    <a href="#" class="footer-icon-btn" aria-label="Medium">
+                      <i class="fa-brands fa-medium"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Single Centered Oversized Brand Showcase -->
+          <div class="footer-showcase-wrap" aria-hidden="true">
+            <div class="footer-giant-wordmark">
+              <span class="giant-text">Aiofoct</span>
+              <span class="giant-mark-stack">
+                <svg class="giant-arrows" viewBox="0 0 36 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 3L4 9L10 15" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M5 9H28C30.2 9 32 10.8 32 13V14" stroke="currentColor" stroke-width="3.2"
+                    stroke-linecap="round" />
+                  <path d="M26 25L32 19L26 13" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M31 19H8C5.8 19 4 17.2 4 15V14" stroke="currentColor" stroke-width="3.2"
+                    stroke-linecap="round" />
+                </svg>
+                <span class="giant-dot"></span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Copyright & Legal Bar -->
+        <div class="footer-bottom">
+          <div class="container">
+            <div class="footer-bottom-inner">
+              <p class="footer-copyright">
+                Aiofoct &copy; 2026, All Rights Reserved. Developed by <a href="#blumiieo"
+                  class="footer-dev-link">blumiieo</a>
+              </p>
+
+              <ul class="footer-bottom-links">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#privacy">Privacy &amp; Policy</a></li>
+                <li><a href="#terms">Terms &amp; Conditions</a></li>
+              </ul>
+
+              <button type="button" class="footer-back-to-top" id="backToTopBtn" aria-label="Back to top">
+                <i class="fa-solid fa-arrow-up"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- == SPOTLIGHT SEARCH MODAL (CMD + K)== -->
+  <div class="search-modal-backdrop" id="searchModal" role="dialog" aria-modal="true" aria-label="Site Search">
+    <div class="search-modal-dialog">
+      <div class="search-input-wrapper">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" class="search-input-field" id="searchInput"
+          placeholder="Search converters, compression tools, guides..." autocomplete="off" />
+        <button type="button" class="search-close-key" id="closeSearchBtn">ESC</button>
+      </div>
+
+      <!-- Live Search Results & Suggestions -->
+      <div class="search-results-panel" id="searchResultsList">
+        <!-- Populated dynamically via JS -->
+      </div>
+
+      <div class="search-modal-footer">
+        <span>Tip: Press <strong>ESC</strong> to close or click outside.</span>
+        <span>Instant Local Filtering</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop"></div>
+
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">Aiofoct<span>.</span></div>
+      <button type="button" id="closeDrawerBtn" style="font-size: 1.25rem; color: #64748b; padding: 4px;">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation with Expandable Tools Accordion -->
+    <ul class="mobile-nav-list">
+      <!-- Tools Accordion Trigger Button -->
+      <li>
+        <button type="button" class="mobile-tools-trigger" id="mobileToolsTrigger">
+          <span>Tools</span>
+          <i class="fa-solid fa-chevron-down chevron"></i>
+        </button>
+
+        <div class="mobile-tools-accordion" id="mobileToolsAccordion">
+          <!-- Category 1 -->
+          <div class="mobile-category-group">
+            <div class="mobile-category-title"><i class="fa-solid fa-arrows-rotate"></i> Converters</div>
+            <a href="#png-to-jpg" class="mobile-tool-item close-drawer-item"><i class="fa-solid fa-image"></i> PNG to
+              JPG</a>
+            <a href="#jpg-to-webp" class="mobile-tool-item close-drawer-item"><i class="fa-solid fa-file-image"></i> JPG
+              to WebP</a>
+            <a href="#webp-to-png" class="mobile-tool-item close-drawer-item"><i
+                class="fa-solid fa-wand-magic-sparkles"></i> WebP to PNG</a>
+          </div>
+
+          <!-- Category 2 -->
+          <div class="mobile-category-group">
+            <div class="mobile-category-title"><i class="fa-solid fa-bolt"></i> Optimization</div>
+            <a href="#compress-images" class="mobile-tool-item close-drawer-item"><i class="fa-solid fa-compress"></i>
+              Compressor</a>
+            <a href="#bulk-resize" class="mobile-tool-item close-drawer-item"><i
+                class="fa-solid fa-up-right-and-down-left-from-center"></i> Bulk Resizer</a>
+            <a href="#svg-optimizer" class="mobile-tool-item close-drawer-item"><i class="fa-solid fa-bezier-curve"></i>
+              SVG Minifier</a>
+          </div>
+
+          <!-- Category 3 -->
+          <div class="mobile-category-group">
+            <div class="mobile-category-title"><i class="fa-solid fa-shield-halved"></i> Utilities</div>
+            <a href="#metadata-remover" class="mobile-tool-item close-drawer-item"><i class="fa-solid fa-eye-slash"></i>
+              EXIF Stripper</a>
+            <a href="#color-picker" class="mobile-tool-item close-drawer-item"><i class="fa-solid fa-palette"></i> Color
+              Extractor</a>
+            <a href="#fav-generator" class="mobile-tool-item close-drawer-item"><i class="fa-solid fa-icons"></i>
+              Favicon Maker</a>
+          </div>
+        </div>
+      </li>
+
+      <li><a href="#blog" class="mobile-nav-link close-drawer-item">Blog</a></li>
+      <li><a href="#about" class="mobile-nav-link close-drawer-item">About</a></li>
+      <li><a href="#contact" class="mobile-nav-link close-drawer-item">Contact</a></li>
+    </ul>
+
+    <div style="margin-top: auto; padding-top: 18px; display: flex; flex-direction: column; gap: 10px;">
+      <button type="button" class="nav-search-trigger" id="mobileSearchTrigger"
+        style="width: 100%; justify-content: center;">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>Search site...</span>
+      </button>
+      <a href="#all-tools" class="btn-browse-pill close-drawer-item"
+        style="display: flex; width: 100%; text-align: center;">Browse all tools</a>
+    </div>
+  </div>
+
+  <script src="assets/js/main.min.js"></script>
+</body>
+
+</html>
